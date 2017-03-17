@@ -100,7 +100,7 @@ class ExcelReaderController extends Controller
                            }
                         }
                       }
-                        $rows[$row_num][$arrFieldValue[$key_index]] = $column;
+                        $rows[$row_num][$arrFieldValue[$key_index]] = str_replace('"', '\"', $column);
                     }
 
                 }
