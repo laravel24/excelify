@@ -2,7 +2,7 @@
 <html lang="zh">
 <head>
     <meta charset="UTF-8">
-    <title>dExcel</title>
+    <title>Excelify</title>
     <link rel="stylesheet" href="/css/app.css">
     <style>
     body{
@@ -12,6 +12,7 @@
      {
         overflow-y:scroll;
         height: 200px;
+        width: 500px;
         padding: 4px;
         border: 1px dashed gray;
      } 
@@ -21,7 +22,7 @@
     </style>
 </head>
 <body>
-    <div class="container">
+    <div class="container-fluid">
        <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
             @yield('content')
@@ -29,7 +30,5 @@
     </div> 
 </div>
 <script src="/js/app.js"></script>
-@section('scripts')
-@show
 </body>
 </html>

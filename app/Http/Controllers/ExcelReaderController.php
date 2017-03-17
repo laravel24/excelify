@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use PHPExcel_IOFactory;
 
 use Storage;
+use Log;
 
 class ExcelReaderController extends Controller
 {
@@ -23,6 +24,7 @@ class ExcelReaderController extends Controller
 
         $arrFieldName = $r->fieldName; //欄位
         $arrFieldValue = $r->fieldValue; //值
+        $arrFieldKvMap = $r->fieldKvMap;
 
         if (!isset($r->excelfile)&&$r->session()->has('path')) {
             $path = session('path');
@@ -86,6 +88,18 @@ class ExcelReaderController extends Controller
                     }
                     else
                     {
+                      //有定義對Kv對印
+                      if(!empty(trim($arrFieldKvMap[$key_index]))){
+                        $strColumn = preg_replace('/^\\[(.*)\\]$/um', '$1', $arrFieldKvMap[$key_index]);
+                        $arrData = explode(",", $strColumn);
+                        foreach($arrData as $item){
+                           $itemkv = explode("=>",$item); 
+                           $result = preg_replace('/^"(.*)"$/um', '$1', trim($itemkv[0]));
+                           if($result==$column){
+                            $column = preg_replace('/^"(.*)"$/um', '$1', trim($itemkv[1]));
+                           }
+                        }
+                      }
                         $rows[$row_num][$arrFieldValue[$key_index]] = $column;
                     }
 
