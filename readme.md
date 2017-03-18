@@ -1,5 +1,6 @@
 用來選取範圍將Excel資料轉換成Array或是SQL Insert語法，或是Lravel的Query Builder.
-安裝:
+
+<h3>安裝:</h3>
 
 1. composer install
 
@@ -10,7 +11,7 @@
 上傳的excel都會存放在:
 app/files
 
-為了確保執行上沒什麼問題，建議設定如下:
+<h3>為了確保執行上沒什麼問題，建議設定如下:</h3>
 
 php.ini建議設定:
 <pre>
