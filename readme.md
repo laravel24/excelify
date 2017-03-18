@@ -1,4 +1,7 @@
 用來選取範圍將Excel資料轉換成Array或是SQL Insert語法，或是Lravel的Query Builder.
+DEMO:
+
+[![Everything Is AWESOME](https://www.ccc.tc/Excelify.png)](https://youtu.be/LkaWIOUlOFU "Everything Is AWESOME")
 
 <h3>安裝:</h3>
 
