@@ -10,3 +10,18 @@
 上傳的excel都會存放在:
 app/files
 
+為了確保執行上沒什麼問題，建議設定如下:
+
+php.ini建議設定:
+<pre>
+upload_max_filesize = 50M
+post_max_size = 50M
+max_execution_time = 0
+memory_limit = -1
+</pre>
+
+nginx的設定:
+<pre>
+client_max_body_size 50m;
+</pre>
+
